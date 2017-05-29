@@ -51,9 +51,9 @@ public class SLList {
 		}
 	}
 
-	/** Calculate size recursively? no, not everyone has a first? or we need to copy the rest to a new SSList? */
+	/** Time spent is in direct proportion to the size of the list because of the traverse of every element. */
 	public int size2() {
-		return size_helper(first);
+		return size_helper(first); // problem at first: for recursively method, not everyone has "first"
 	}
 
 	public static void main(String[] args) {
