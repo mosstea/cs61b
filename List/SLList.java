@@ -12,7 +12,7 @@ public class SLList {
 
 	private IntNode first;
 	public int size; 	// 1. idea: caching
-						// 2. if size is made private, add a simple public that can return size
+						// 2. if size is made private, add a simple public method that can return size
 
 	public SLList(int x) {
 		first = new IntNode(x, null);
