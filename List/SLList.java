@@ -14,6 +14,12 @@ public class SLList {
 	public int size; 	// 1. idea: caching
 						// 2. if size is made private, add a simple public method that can return size
 
+	/** Represents an empty list. */
+	public SLList() {
+		first = null;
+		size = 0;
+	}
+	
 	public SLList(int x) {
 		first = new IntNode(x, null);
 		size = 1;
