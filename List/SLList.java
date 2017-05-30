@@ -10,32 +10,38 @@ public class SLList {
 		}	
 	}
 
-	private IntNode first;
+	/** The first element in the list should be sentinel.next */
+	private IntNode sentinel;
 	public int size; 	// 1. idea: caching
 						// 2. if size is made private, add a simple public method that can return size
 
 	/** Represents an empty list. */
 	public SLList() {
-		first = null;
+		sentinel = new IntNode(0, null);
 		size = 0;
 	}
 	
 	public SLList(int x) {
-		first = new IntNode(x, null);
+		sentinel = new IntNode(0, null);
+		sentinel.next = new IntNode(x, null);
 		size = 1;
 	}
 
 	public void addFirst(int x) {
-		first = new IntNode(x, first);
+		sentinel.next = new IntNode(x, sentinel.next);
 		size += 1;
 	}
 
 	public int getFirst() {
-		return first.item;
+		if (size != 0) {
+			return sentinel.next.item;
+		} else {
+			return -10000;	// however, there is still special case here
+		}
 	}
 
 	public void addLast(int x) {
-		IntNode cur = first;
+		IntNode cur = sentinel;
 		while (cur.next != null) {
 			cur = cur.next;
 		}
@@ -44,7 +50,7 @@ public class SLList {
 	}
 
 	public static void main(String[] args) {
-		SLList s = new SLList(10);
+		SLList s = new SLList();
 		System.out.println(s.getFirst());
 		s.addFirst(120);
 		System.out.println(s.getFirst());
