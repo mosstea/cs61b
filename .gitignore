@@ -2,4 +2,5 @@
 *.class
 skeleton-sp17/
 *.xml
-*.iml 
+*.iml
+./List/AList/out 
