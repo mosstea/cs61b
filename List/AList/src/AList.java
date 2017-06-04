@@ -2,22 +2,22 @@
  * @author lanqingy
  * @version 06/04/17
  */
-public class AList {
-    private int[] items;
+public class AList<Type> {
+    private Type[] items;
     private int size;
 
     public AList() {
-        items = new int[3];
+        items = (Type[]) new Object[3];
         size = 0;
     }
 
     private void resize(int capacity) {
-        int[] temp = new int[capacity];
+        Type[] temp = (Type[]) new Object[capacity];
         System.arraycopy(items, 0, temp, 0, size);
         items = temp;
     }
 
-    public void addLast(int x) {
+    public void addLast(Type x) {
         if (size == items.length) {
             resize(size + 1);
         }
@@ -25,11 +25,11 @@ public class AList {
         size += 1;
     }
 
-    public int getLast() {
+    public Type getLast() {
         return items[size - 1];
     }
 
-    public int get(int i) {
+    public Type get(int i) {
         return items[i];
     }
 
@@ -37,8 +37,8 @@ public class AList {
         return size;
     }
 
-    public int removeLast() {
-        int last = getLast();
+    public Type removeLast() {
+        Type last = getLast();
         size -= 1;
         return last;
     }
