@@ -12,6 +12,10 @@ public class AListLaucher {
         System.out.println(lst.get(1));
         System.out.println(lst.removeLast());
         System.out.println(lst.getLast());
-        System.out.println(lst.get(20));
+        lst.addLast(30);
+        System.out.println(lst.size());
+        lst.addLast(40);
+        System.out.println(lst.size());
+        System.out.println(lst.getLast());
     }
 }

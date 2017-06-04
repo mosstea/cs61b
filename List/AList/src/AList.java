@@ -3,15 +3,20 @@
  * @version 06/04/17
  */
 public class AList {
-    int[] items;
-    int size;
+    private int[] items;
+    private int size;
 
     public AList() {
-        items = new int[100];
+        items = new int[3];
         size = 0;
     }
 
     public void addLast(int x) {
+        if (size == items.length) {
+            int[] temp = new int[size + 1];
+            System.arraycopy(items, 0, temp, 0, size);
+            items = temp;
+        }
         items[size] = x;
         size += 1;
     }
@@ -20,7 +25,7 @@ public class AList {
         return items[size - 1];
     }
 
-    public int get(int i ) {
+    public int get(int i) {
         return items[i];
     }
 
@@ -33,5 +38,4 @@ public class AList {
         size -= 1;
         return last;
     }
-
 }
