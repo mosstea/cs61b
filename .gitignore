@@ -1,3 +1,5 @@
 .DS_Store
 *.class
-skeleton-sp17/ 
+skeleton-sp17/
+*.xml
+*.iml 
