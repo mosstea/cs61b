@@ -39,6 +39,7 @@ public class AList<Type> {
 
     public Type removeLast() {
         Type last = getLast();
+        items[size - 1] = null; // avoid loitering when using generics
         size -= 1;
         return last;
     }
