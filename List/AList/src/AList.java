@@ -11,11 +11,15 @@ public class AList {
         size = 0;
     }
 
+    private void resize(int capacity) {
+        int[] temp = new int[capacity];
+        System.arraycopy(items, 0, temp, 0, size);
+        items = temp;
+    }
+
     public void addLast(int x) {
         if (size == items.length) {
-            int[] temp = new int[size + 1];
-            System.arraycopy(items, 0, temp, 0, size);
-            items = temp;
+            resize(size + 1);
         }
         items[size] = x;
         size += 1;
