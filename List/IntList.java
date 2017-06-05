@@ -71,6 +71,30 @@ public class IntList {
 		return l;
 	}
 
+	/** Increase all the elements in this list by x. */
+	public static IntList squareNonDestructive(IntList l) {
+		IntList q = new IntList(l.first * l.first, null);
+		IntList curq = q;
+		IntList cur = l.rest;
+		while (cur != null) {
+			System.out.println("cur.first" + cur.first);
+			curq.rest = new IntList(cur.first * cur.first, null);
+			curq = curq.rest;
+			cur = cur.rest;
+		}
+		return q;
+	}
+
+	/** Increase all the elements in this list by x. */
+	public static IntList squareDistructive(IntList l) {
+		IntList cur = l;
+		while (cur != null) {
+			cur.first = cur.first * cur.first;
+			cur = cur.rest;
+		}
+		return l;
+	}
+
 
 	public static void main(String[] args) {
 		IntList l = new IntList(15, null);
@@ -91,6 +115,14 @@ public class IntList {
 		System.out.println(dincrList(l, 5).first);
 		System.out.println(l.rest.first);
 		System.out.println(l.rest.rest.first);
-
+		System.out.println("square all elements in the list exercise copied");
+		IntList r = squareNonDestructive(l);
+		System.out.println(r.first);
+		System.out.println(r.rest.first);
+		System.out.println(r.rest.rest.first);
+		System.out.println("square all elements in the list exercise onself");
+		System.out.println(squareDistructive(l).first);
+		System.out.println(l.rest.first);
+		System.out.println(l.rest.rest.first);
 	}
 }
