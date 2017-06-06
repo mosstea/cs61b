@@ -18,6 +18,6 @@ public class Pokemon {
       level = 50;
       poke = new Pokemon("Gengar", 1); // poke no longer point to "p" in main, 
                                        // so the following change will not affect "p" in main 
-                                       // but the "p" in main still points to the original object
+                                       // but the "p" in main still points to the object
    } 
 }

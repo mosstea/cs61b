@@ -124,5 +124,6 @@ public class IntList {
 		System.out.println(squareDistructive(l).first);
 		System.out.println(l.rest.first);
 		System.out.println(l.rest.rest.first);
+
 	}
 }

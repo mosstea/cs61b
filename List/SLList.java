@@ -27,6 +27,11 @@ public class SLList<type> implements List61B<type> {
 	}
 
 	@Override
+	public type getLast() {
+		return get(size - 1);
+	}
+
+	@Override
 	public type getFirst() {
 		return first.item;
 	}
@@ -63,7 +68,52 @@ public class SLList<type> implements List61B<type> {
 			System.out.println(p.item + " ");
 		}
 	}
-	
+
+	public void insert(type item, int position) {
+		int i = position;
+
+		if (position > size) {
+			return;
+		}
+
+		size += 1;
+
+		Node cur = first;
+		Node prev = new Node(first.item, null);
+		Node curprev = prev;
+
+		while (i > 0) {		
+			System.out.println("adding: " + cur.item);
+			curprev.next = new Node(cur.item, null);
+			curprev = curprev.next;
+			cur = cur.next;
+			i--;
+		}
+
+		if (position == 0) {
+			first = new Node(item, cur);
+		} else {
+			curprev.next = new Node(item, cur);
+			first = prev.next;
+		}	
+	}
+
+	public void reverse() {
+		if (size == 0 || size == 1) {
+			return;
+		}
+
+		Node cur = first.next;
+		Node prev = first;
+		while (cur.next != null) {
+			Node rest = cur.next;
+			cur.next = prev;
+			prev.next = 
+			prev = cur;
+			cur = rest;
+		}
+		first = cur;
+	}
 
 	public static void main(String[] args) {
 		SLList<String> s = new SLList<String>("apple");

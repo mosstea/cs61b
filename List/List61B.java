@@ -5,10 +5,13 @@ public interface List61B<Type> {
 	public void addLast(Type i);
 
 	public Type getFirst();
-	//public Type getLast();
+
+	public Type getLast();
+
 	//public Type removeLast();
 
 	public Type get(int i);
+	
 	//public void insert(Type i, int position);
 
 	public int size();
