@@ -32,6 +32,19 @@ public class IntArray {
 		}
 	}
 
+	public static void reverseRecursive(int[] x) {
+		if (x.length == 1) {
+			return;
+		}
+
+		int[] rest = new int[x.length - 1];
+		System.arraycopy(x, 1, rest, 0, x.length - 1);
+		reverseRecursive(rest);
+		int first = x[0];
+		System.arraycopy(rest, 0, x, 0, x.length - 1);
+		x[x.length - 1] = first;
+	}
+
 	public static int[] xify(int[] x) {
 		if (x == null || x.length == 0) {
 			return new int[0];
@@ -65,7 +78,7 @@ public class IntArray {
 		int[] x = {1, 2, 3, 5, 6};
 		print(x);
 		print(insert(x, 4, 3));
-		reverse(x);
+		reverseRecursive(x);
 		print(x);
 		print(xify(x));
 	}

@@ -30,7 +30,7 @@ public class WordUtils {
 		System.out.println(longest(lst));
 		lst.insert("cat", 1);
 		lst.print();
-		lst.reverse();
+		lst.reverseRecursive();
 		lst.print();
 		System.out.println("calling peek now");
 		peek(lst);

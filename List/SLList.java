@@ -83,7 +83,6 @@ public class SLList<type> implements List61B<type> {
 		Node curprev = prev;
 
 		while (i > 0) {		
-			System.out.println("adding: " + cur.item);
 			curprev.next = new Node(cur.item, null);
 			curprev = curprev.next;
 			cur = cur.next;
@@ -105,14 +104,35 @@ public class SLList<type> implements List61B<type> {
 
 		Node cur = first.next;
 		Node prev = first;
-		while (cur.next != null) {
+		prev.next = null;
+		while (cur != null) {
 			Node rest = cur.next;
 			cur.next = prev;
-			prev.next = 
 			prev = cur;
 			cur = rest;
 		}
-		first = cur;
+		first = prev;
+	}
+
+	public Node reverseHelper(Node node) {
+		if (node.next == null) {
+			return node;
+		}
+
+		Node front = node;
+		Node rest = node.next;
+		front.next = null;
+		rest = reverseHelper(rest);
+		Node cur = rest;
+		while (cur.next != null) {
+			cur = cur.next;
+		}
+		cur.next = front;
+		return rest;
+	}
+
+	public void reverseRecursive() {
+		first = reverseHelper(first);
 	}
 
 	public static void main(String[] args) {
