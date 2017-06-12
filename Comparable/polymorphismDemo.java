@@ -1,5 +1,5 @@
 public class polymorphismDemo {
-	public static OurComparable max(OurComparable[] items) {
+	public static Comparable max(Comparable[] items) {
 		if (items == null || items.length == 0) {
 			return null;
 		}
