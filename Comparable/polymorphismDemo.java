@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class polymorphismDemo {
 	public static Comparable max(Comparable[] items) {
 		if (items == null || items.length == 0) {
@@ -18,7 +20,7 @@ public class polymorphismDemo {
 		maxDog.bark();
 		Dog d1 = new Dog("Lucy", 10);
 		Dog d2 = new Dog("Emily", 20);
-		Dog.NameComparator nc = new Dog.NameComparator();
+		Comparator<Dog> nc = Dog.getNameComparator();
 		if (nc.compare(d1, d2) > 0) {
 			d1.bark();
 		} else {
