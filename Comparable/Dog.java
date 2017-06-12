@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class Dog implements	Comparable<Dog> {
 	private String name;
 	public int size;
@@ -14,5 +16,11 @@ public class Dog implements	Comparable<Dog> {
 	@Override
 	public int compareTo(Dog dog) {
 		return size - dog.size;
+	}
+
+	public static class NameComparator implements Comparator<Dog>{
+		public int compare(Dog d1, Dog d2) {
+			return d1.name.compareTo(d2.name);
+		}
 	}
 }

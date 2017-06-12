@@ -16,5 +16,13 @@ public class polymorphismDemo {
 		Dog[] dogs = {new Dog("Ashley", 10), new Dog("Mia", 5), new Dog("hillo", 20)};
 		Dog maxDog = (Dog) max(dogs);
 		maxDog.bark();
-	}
+		Dog d1 = new Dog("Lucy", 10);
+		Dog d2 = new Dog("Emily", 20);
+		Dog.NameComparator nc = new Dog.NameComparator();
+		if (nc.compare(d1, d2) > 0) {
+			d1.bark();
+		} else {
+			d2.bark();
+		}
+ 	}
 }
