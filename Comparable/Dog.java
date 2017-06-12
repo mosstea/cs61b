@@ -1,4 +1,4 @@
-public class Dog implements OurComparable {
+public class Dog implements OurComparable<Dog> {
 	private String name;
 	public int size;
 
@@ -8,12 +8,11 @@ public class Dog implements OurComparable {
 	}
 
 	public void bark() {
-		System.out.println(name + " is barking");
+		System.out.println(name + " is barking!");
 	}
 
 	@Override
-	public int compareTo(Object o) {
-		Dog dog = (Dog) o;
+	public int compareTo(Dog dog) {
 		return size - dog.size;
 	}
 }
