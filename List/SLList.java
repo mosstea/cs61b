@@ -1,6 +1,6 @@
 public class SLList<type> implements List61B<type> {
 
-	private class Node {
+	public class Node {
 		public type item;
 		public Node next;
 
@@ -11,10 +11,10 @@ public class SLList<type> implements List61B<type> {
 	}
 
 	/** The first element in the list should be sentinel.next */
-	private Node first;
+	public Node first;
 	public int size; 	// 1. idea: caching
 						// 2. if size is made private, add a simple public method that can return size
-	
+
 	public SLList(type x) {
 		first = new Node(x, null);
 		size = 1;
