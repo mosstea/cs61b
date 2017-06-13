@@ -3,4 +3,7 @@
 skeleton-sp17/
 *.xml
 *.iml
-./List/AList/out 
+./List/AList/out
+./Map/ArrayMap/lib/
+./Map/ArrayMap/out/
+*.jar 
