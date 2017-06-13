@@ -18,13 +18,13 @@ public class Dog implements	Comparable<Dog> {
 		return size - dog.size;
 	}
 
-	//private static class NameComparator implements Comparator<Dog> {
-		public static int compare(Dog d1, Dog d2) {
+	private static class NameComparator implements Comparator<Dog> {
+		public int compare(Dog d1, Dog d2) {
 			return d1.name.compareTo(d2.name);
 		}
-	//}
+	}
 
-	//public static Comparator<Dog> getNameComparator() {
-	//	return new NameComparator();
-	//}
+	public static Comparator<Dog> getNameComparator() {
+		return new NameComparator();
+	}
 }
