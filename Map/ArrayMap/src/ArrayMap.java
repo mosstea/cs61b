@@ -16,7 +16,7 @@ public class ArrayMap<K, V> implements Iterable<K> {
 //        return new KeyIterator();
 //    }
 //
-//    public class KeyIterator implements Iterator<K> {
+//    private class KeyIterator implements Iterator<K> {
 //        private int position;
 //
 //        public KeyIterator() {
