@@ -14,10 +14,17 @@ public class ArrayMapLauncher {
         System.out.println(shoppingList.containsKey("banana"));
         System.out.println(shoppingList.containsKey("peach"));
 
-        ArrayMap.KeyIterator am = shoppingList.new KeyIterator();
 
-        while (am.hasNext()) {
-            System.out.println(am.next());
+        // old-fashioned Iterator way:
+//        ArrayMap.KeyIterator am = shoppingList.new KeyIterator();
+//
+//        while (am.hasNext()) {
+//            System.out.println(am.next());
+//        }
+
+        // more concise way
+        for (String item: shoppingList) {
+            System.out.println(item);
         }
     }
 }

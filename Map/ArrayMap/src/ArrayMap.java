@@ -3,14 +3,19 @@
  */
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class ArrayMap<K, V> {
+public class ArrayMap<K, V> implements Iterable<K> {
     private K[] keys;
     private V[] values;
     private int size;
 
-    public class KeyIterator {
+    public Iterator<K> iterator() {
+        return new KeyIterator();
+    }
+
+    public class KeyIterator implements Iterator<K> {
         private int position;
 
         public KeyIterator() {
