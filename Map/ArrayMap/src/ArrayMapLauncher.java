@@ -9,7 +9,7 @@ public class ArrayMapLauncher {
         ArrayMap<String, Integer> shoppingList = new ArrayMap<>();
         shoppingList.put("apple", 5);
         shoppingList.put("peach", 4);
-        shoppingList.put("almond milk", 1);
+        shoppingList.put("almond" , 1);
         System.out.println(shoppingList.get("apple"));
         System.out.println(shoppingList.containsKey("banana"));
         System.out.println(shoppingList.containsKey("peach"));

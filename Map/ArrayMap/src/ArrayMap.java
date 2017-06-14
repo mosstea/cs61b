@@ -11,25 +11,32 @@ public class ArrayMap<K, V> implements Iterable<K> {
     private V[] values;
     private int size;
 
+    // override iterator() with inner class
+//    public Iterator<K> iterator() {
+//        return new KeyIterator();
+//    }
+//
+//    public class KeyIterator implements Iterator<K> {
+//        private int position;
+//
+//        public KeyIterator() {
+//            position = 0;
+//        }
+//        public boolean hasNext() {
+//            return position < size;
+//        }
+//
+//        public K next() {
+//            K next = keys[position];
+//            position += 1;
+//            return next;
+//        }
+//    }
+
+    // override iterator() with existing iterator()
     public Iterator<K> iterator() {
-        return new KeyIterator();
-    }
-
-    public class KeyIterator implements Iterator<K> {
-        private int position;
-
-        public KeyIterator() {
-            position = 0;
-        }
-        public boolean hasNext() {
-            return position < size;
-        }
-
-        public K next() {
-            K next = keys[position];
-            position += 1;
-            return next;
-        }
+        List<K> keyList = getKeys();
+        return keyList.iterator();
     }
 
     public ArrayMap() {
