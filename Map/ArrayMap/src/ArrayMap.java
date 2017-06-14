@@ -10,6 +10,23 @@ public class ArrayMap<K, V> {
     private V[] values;
     private int size;
 
+    public class KeyIterator {
+        private int position;
+
+        public KeyIterator() {
+            position = 0;
+        }
+        public boolean hasNext() {
+            return position < size;
+        }
+
+        public K next() {
+            K next = keys[position];
+            position += 1;
+            return next;
+        }
+    }
+
     public ArrayMap() {
         keys = (K[]) new Object[10];
         values = (V[]) new Object[10];
@@ -45,8 +62,7 @@ public class ArrayMap<K, V> {
         if (idx != -1) {
             return values[idx];
         } else {
-            System.out.println("key not exists");
-            return null;
+            throw new IllegalArgumentException("The key provided " + key + " is not in the map");
         }
     }
 

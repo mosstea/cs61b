@@ -1,8 +1,11 @@
+import java.io.IOException;
+
 /**
  * Created by lanqingy on 6/13/17.
  */
+
 public class ArrayMapLauncher {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         ArrayMap<String, Integer> shoppingList = new ArrayMap<>();
         shoppingList.put("apple", 5);
         shoppingList.put("peach", 4);
@@ -10,5 +13,11 @@ public class ArrayMapLauncher {
         System.out.println(shoppingList.get("apple"));
         System.out.println(shoppingList.containsKey("banana"));
         System.out.println(shoppingList.containsKey("peach"));
+
+        ArrayMap.KeyIterator am = shoppingList.new KeyIterator();
+
+        while (am.hasNext()) {
+            System.out.println(am.next());
+        }
     }
 }
