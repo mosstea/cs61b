@@ -7,3 +7,5 @@ skeleton-sp17/
 ./Map/ArrayMap/lib/
 ./Map/ArrayMap/out/
 *.jar 
+*.mp4
+./videos/
